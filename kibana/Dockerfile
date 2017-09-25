@@ -26,7 +26,9 @@ EXPOSE 5601
 WORKDIR /home/kibana/${KIBANA}
 
 # RUN $(export GATEWAY=$(ip route | grep default | cut -d ' ' -f 3))
-ENV GATEWAY="172.17.0.1"
+# ENV GATEWAY="172.17.0.1"
+
+RUN sed -i 's/\#server\.host\: \"localhost\"/server\.host: 172.17.0.2/' config/kibana.yml
 
 RUN sed -i 's/\#elasticsearch\.url\: \"http\:\/\/localhost\:9200\"/elasticsearch\.url\: \"http\:\/\/172.17.0.1\:9200\"/' config/kibana.yml
 
