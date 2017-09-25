@@ -33,7 +33,7 @@ EXPOSE 9200 9300
 
 WORKDIR /home/elasticsearch/${ES}
 
-# RUN echo 'network.host: ${HOSTNAME}' >> config/elasticsearch.yml
+# Switch to container's external address
 RUN sed -i 's/\#network\.host\: 192\.168\.0\.1/network\.host: \$\{HOSTNAME\}/' config/elasticsearch.yml
 
 CMD ["./bin/elasticsearch"]
