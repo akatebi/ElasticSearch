@@ -29,8 +29,7 @@ HEALTHCHECK --timeout=5s \
 
 VOLUME ["/data","/conf"]
 
-EXPOSE 9200
-EXPOSE 9300
+EXPOSE 9200 9300
 
 WORKDIR /home/elasticsearch/${ES}
 
