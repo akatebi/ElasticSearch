@@ -35,4 +35,4 @@ RUN sed -i 's/\#elasticsearch\.url\: \"http\:\/\/localhost\:9200\"/elasticsearch
 CMD ["./bin/kibana"]
 
 # docker build -t akatebi/kibana - < Dockerfile
-# docker run -p9200:9200 -p9300:9300 -d akatebi/kibana
+# docker run -p5601:5601 -d akatebi/kibana
